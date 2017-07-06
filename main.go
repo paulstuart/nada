@@ -22,7 +22,7 @@ func init() {
 
 func setup() {
 	flag.Parse()
-	if ! path.IsAbs(static) {
+	if !path.IsAbs(static) {
 		cwd, _ := os.Getwd()
 		static = path.Join(cwd, static)
 	}
@@ -34,7 +34,7 @@ func hey(w http.ResponseWriter, r *http.Request) {
 }
 
 func localIP(s string) bool {
-	return strings.HasPrefix(s, "127.") || strings.Index(s, ":") != -1 
+	return strings.HasPrefix(s, "127.") || strings.Index(s, ":") != -1
 }
 
 func myIP() string {
@@ -62,4 +62,3 @@ func main() {
 	setup()
 	server()
 }
-
